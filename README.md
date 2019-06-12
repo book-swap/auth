@@ -7,7 +7,7 @@
 <p align="center">
 <a href="https://travis-ci.org/book-swap/auth"><img src="https://travis-ci.org/book-swap/auth.svg?branch=master" alt="Build Status"></a>
 <a href="https://david-dm.org/book-swap/auth"><img src="https://img.shields.io/david/book-swap/auth.svg" alt="Dependencies Status"></a>
-<a href='https://coveralls.io/github/book-swap/auth?branch=master'><img src='https://coveralls.io/repos/github/book-swap/auth/badge.svg?branch=master' alt='Coverage Status' /></a>
+<a href='https://coveralls.io/github/book-swap/auth?branch=master'><img src='https://img.shields.io/coveralls/github/book-swap/auth.svg' alt='Coverage Status' /></a>
 <a href="https://github.com/book-swap/auth/blob/master/LICENSE"><img src="https://img.shields.io/github/license/book-swap/auth.svg?color=brightgreen" alt="GitHub License"></a>
 </p>
 
