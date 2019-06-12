@@ -6,7 +6,7 @@ services:
   - mongodb
 
 env:
-  - TRAVIS=true
+  - TRAVIS=true JWT_SECRET=test_jwt_secret
 
 before_install:
   - sudo apt-get install -y build-essential python
