@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+  auth_test:
+    build:
+      context: .
+      dockerfile: Dockerfile-test
+    restart: 'no'
+    volumes:
+      - ./:/usr/src/app/
+    environment:
+      NODE_ENV: test
+      JWT_SECRET: test_jwt_secret
+    depends_on:
+      - db_test
+    links:
+      - db_test:db
+
+  db_test:
+    image: mongo:4.0-xenial
+    restart: 'no'
