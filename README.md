@@ -8,7 +8,7 @@
 <a href="https://travis-ci.org/book-swap/auth"><img src="https://travis-ci.org/book-swap/auth.svg?branch=master" alt="Build Status"></a>
 <a href="https://david-dm.org/book-swap/auth"><img src="https://img.shields.io/david/book-swap/auth.svg" alt="Dependencies Status"></a>
 <a href='https://coveralls.io/github/book-swap/auth?branch=master'><img src='https://img.shields.io/coveralls/github/book-swap/auth.svg' alt='Coverage Status' /></a>
-<a href="https://snyk.io/test/github/book-swap/auth?targetFile=package.json"><img src="https://snyk.io/test/github/book-swap/auth/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/book-swap/auth?targetFile=package.json" style="max-width:100%;"></a>
+<a href="https://snyk.io/test/github/book-swap/auth?targetFile=package.json"><img src="https://img.shields.io/snyk/vulnerabilities/github/book-swap/auth.svg" alt="Known Vulnerabilities"></a>
 </p>
 
 ## Installation
