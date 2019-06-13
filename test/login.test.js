@@ -2,6 +2,7 @@
 /* eslint-disable no-undef */
 const request = require('supertest');
 const { expect } = require('chai');
+const jwt = require('jsonwebtoken');
 const app = require('../src/app');
 const User = require('../src/models/user.model');
 
@@ -28,6 +29,16 @@ describe("'auth' test suite", () => {
           done();
         });
     });
+
+    it('should not create a new user without email and password', done => {
+      request(app)
+        .post('/local/register')
+        .send({})
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(400);
+          done();
+        });
+    });
   });
 
   describe('POST /local/login', () => {
@@ -50,9 +61,48 @@ describe("'auth' test suite", () => {
         });
     });
 
+    it('should not login with wrong email or password', done => {
+      request(app)
+        .post('/local/login')
+        .send({ email: 'wrong_email@email.com', password: 'wrong_password' })
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(404);
+          done();
+        });
+    });
+
+    it('should not login without email and password', done => {
+      request(app)
+        .post('/local/login')
+        .send({})
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(400);
+          done();
+        });
+    });
+
     it('should return a valid JWT', done => {
-      // TODO
-      done();
+      User.create(userData)
+        .then(createdUser => {
+          request(app)
+            .post('/local/login')
+            .send(userData)
+            .end((err, res) => {
+              expect(err).to.be.null;
+              expect(res.statusCode).to.equal(200);
+
+              const decodedJwtPayload = jwt.verify(
+                res.body.data.jwt,
+                process.env.JWT_SECRET
+              );
+              expect(decodedJwtPayload.sub).to.equal(createdUser.id);
+              expect(decodedJwtPayload.email).to.equal(userData.email);
+              done();
+            });
+        })
+        .catch(err => {
+          throw err;
+        });
     });
   });
 });
