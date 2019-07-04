@@ -7,7 +7,9 @@
     "test": "nyc --reporter=html --reporter=text mocha --no-deprecation --exit --timeout=3000",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "start:dev": "nodemon -L ./bin/www",
-    "start:prod": "node ./bin/www"
+    "start:prod": "node ./bin/www",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "Mihai Voinea <hi@voinea.me>",
   "license": "MIT",
@@ -16,7 +18,8 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.5.14"
+    "mongoose": "^5.5.14",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
@@ -31,5 +34,6 @@
     "nyc": "^14.1.1",
     "prettier": "^1.18.2",
     "supertest": "^4.0.2"
-  }
+  },
+  "snyk": true
 }
