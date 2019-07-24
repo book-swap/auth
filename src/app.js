@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const cors = require('cors');
 const router = require('./router');
 
 const app = express();
@@ -26,6 +27,14 @@ mongoose
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan(process.env.NODE_ENV === 'production' ? 'tiny' : 'dev'));
+app.use(
+  cors({
+    origin:
+      process.env.NODE_ENV === 'production'
+        ? 'https://bookswap.ro'
+        : 'http://localhost:8080'
+  })
+);
 // API Routes
 app.use(router);
 
