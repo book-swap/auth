@@ -7,5 +7,5 @@ app.set('port', port);
 // Create http server for the express app and listen
 const server = http.createServer(app);
 server.listen(port, () => {
-  console.log('Listening on port', port);
+  console.log('\'auth\' service running on port', port);
 });
