@@ -19,6 +19,8 @@ $ docker-compose up
 ```
 
 **Don't use `docker-compose` for deploying to production!**
+
+**UPDATE:** Use the docker-compose configuration that runs all the microservices to avoid issues. 
 ## API
 This service provides an easy API for authentication. It was built to be used within the BookSwap miccroservices architecture. To use this service, make HTTP requests to the following routes, sending data as JSON.
 
