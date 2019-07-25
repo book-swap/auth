@@ -36,8 +36,14 @@ exports.register = async (req, res, next) => {
     });
 
     const createdUser = await user.save();
-    if (createdUser)
-      return res.status(200).json({ message: 'Succesfully created user' });
+    if (createdUser) {
+      const token = generateJWTFromUser(user);
+
+      return res.json({
+        message: 'Succesfully created user',
+        data: { id: user.id, email: user.email, jwt: token }
+      });
+    }
     return res.status(500).json({ messae: 'An error occured' });
   } catch (error) {
     return next(error);
