@@ -29,11 +29,11 @@ This service provides an easy API for authentication. It was built to be used wi
 
 Routes available:
 
-### `POST /local/register`
+### `POST /auth/local/register`
   * **email**
   * **password**
 
-### `POST /local/login`
+### `POST /auth/local/login`
   * **email**
   * **password**
   
