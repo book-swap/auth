@@ -3,10 +3,10 @@
 FROM node:lts
 
 # Environment variables
-ENV PORT=8081 NODE_ENV=production
+ENV PORT=8080 NODE_ENV=production
 
 # Expose
-EXPOSE 8081
+EXPOSE 8080
 
 # Create app directory
 RUN mkdir -p /usr/src/app

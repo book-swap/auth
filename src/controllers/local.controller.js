@@ -45,7 +45,7 @@ exports.register = async (req, res, next) => {
 
       // Pass the properties that are not related to authentication to the user service.
       axios.patch(
-        'http://user:8082/me',
+        'http://user:8080/me',
         {
           firstName: req.body.firstName,
           lastName: req.body.lastName,
