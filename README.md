@@ -13,14 +13,17 @@
 
 ## Installation
 Clone the repository, build the docker container and run it:
-```
-$ git clone https://github.com/book-swap/auth.git
-$ docker-compose up
-```
 
-**Don't use `docker-compose` for deploying to production!**
+
+~`$ git clone https://github.com/book-swap/auth.git`~
+
+~`$ docker-compose up`~
+
+~**Don't use `docker-compose` for deploying to production!**~
 
 **UPDATE:** Use the docker-compose configuration that runs all the microservices to avoid issues. 
+
+[**Check out the `config` repository for updated docker configuration and explanation of how it runs.**](https://github.com/book-swap/config)
 ## API
 This service provides an easy API for authentication. It was built to be used within the BookSwap miccroservices architecture. To use this service, make HTTP requests to the following routes, sending data as JSON.
 
