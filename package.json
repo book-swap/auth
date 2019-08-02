@@ -22,7 +22,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.6.7",
     "morgan": "^1.9.1",
-    "snyk": "^1.198.0"
+    "snyk": "^1.208.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
